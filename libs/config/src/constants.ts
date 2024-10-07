@@ -1,0 +1,5 @@
+export const ENV_VARIABLES = {
+    API_GATEWAY_PORT: 'API_GATEWAY_PORT',
+    USERS_PORT: 'USERS_PORT',
+    AUTH_PORT: 'AUTH_PORT'
+  } as const;

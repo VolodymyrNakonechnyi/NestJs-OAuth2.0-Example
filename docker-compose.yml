@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: pnpm run start:dev api-gateway
+    networks:
+      - app-network
+    volumes:
+      - ./apps/api-gateway:/app/apps/api-gateway
+      - ./packages:/app/packages
+      - node_modules:/app/node_modules
+    develop:
+      watch:
+        - action: rebuild
+          path: ./apps/api-gateway/src
+          target: /app/apps/api-gateway/src
+
+
+  users:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    command: pnpm run start:dev users
+    networks:
+      - app-network
+    volumes:
+      - ./apps/users:/app/apps/users
+      - ./packages:/app/packages
+      - node_modules:/app/node_modules
+    develop:
+      watch:
+        - action: rebuild
+          path: ./apps/users/src
+          target: /app/apps/users/src
+
+  auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    command: pnpm run start:dev auth
+    networks:
+      - app-network
+    volumes:
+      - ./apps/auth:/app/apps/auth
+      - ./packages:/app/packages
+      - node_modules:/app/node_modules
+    develop:
+      watch:
+        - action: rebuild
+          path: ./apps/auth/src
+          target: /app/apps/auth/src
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node_modules:

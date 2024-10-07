@@ -1,0 +1,78 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
+    "paths": {
+      "@lib/contracts": [
+        "libs/contracts/src"
+      ],
+      "@lib/contracts/*": [
+        "libs/contracts/src/*"
+      ],
+      "@lib/database": [
+        "libs/database/src"
+      ],
+      "@lib/database/*": [
+        "libs/database/src/*"
+      ],
+      "@lib/config": [
+        "libs/config/src"
+      ],
+      "@lib/config/*": [
+        "libs/config/src/*"
+      ],
+      "@lib/sharedconfig": [
+        "libs/sharedconfig/src"
+      ],
+      "@lib/sharedconfig/*": [
+        "libs/sharedconfig/src/*"
+      ],
+      "@db/database": [
+        "libs/database/src"
+      ],
+      "@db/database/*": [
+        "libs/database/src/*"
+      ],
+      "@lib/common": [
+        "libs/common/src"
+      ],
+      "@lib/common/*": [
+        "libs/common/src/*"
+      ],
+      "@auth/jwt": [
+        "libs/jwt/src"
+      ],
+      "@auth/jwt/*": [
+        "libs/jwt/src/*"
+      ],
+      "@mail/mailer": [
+        "libs/mailer/src"
+      ],
+      "@mail/mailer/*": [
+        "libs/mailer/src/*"
+      ],
+      "@crypto/cryptography": [
+        "libs/cryptography/src"
+      ],
+      "@crypto/cryptography/*": [
+        "libs/cryptography/src/*"
+      ]
+    }
+  }
+}
